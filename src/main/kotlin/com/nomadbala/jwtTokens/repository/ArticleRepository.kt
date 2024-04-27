@@ -7,11 +7,7 @@ import java.util.*
 @Repository
 class ArticleRepository {
 
-    private val articles: List<Article> = listOf(
-        Article(id = UUID.randomUUID(), title = "Article 1", content = "Content 1"),
-        Article(id = UUID.randomUUID(), title = "Article 2", content = "Content 2"),
-        Article(id = UUID.randomUUID(), title = "Article 3", content = "Content 3"),
-    )
+    private val articles: MutableList<Article> = ArrayList()
 
     fun findAll(): List<Article> = articles;
 }

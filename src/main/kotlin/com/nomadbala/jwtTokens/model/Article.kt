@@ -1,9 +1,24 @@
 package com.nomadbala.jwtTokens.model
 
+import jakarta.persistence.*
+import lombok.AllArgsConstructor
+import lombok.NoArgsConstructor
+import lombok.RequiredArgsConstructor
 import java.util.*
 
-data class Article(
-    val id: UUID,
-    val title: String,
-    val content: String,
-)
+@Entity
+@Table(name = "article")
+@AllArgsConstructor
+@RequiredArgsConstructor
+open class Article {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_article", nullable = false)
+    open var id: Long = 0
+
+    @Column(name = "title")
+    open var title: String = ""
+
+    @Column(name = "content")
+    open var content: String = ""
+}

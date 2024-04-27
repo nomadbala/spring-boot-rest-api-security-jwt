@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "3.2.5"
 	id("io.spring.dependency-management") version "1.1.4"
+	id("org.jetbrains.kotlin.plugin.jpa") version "1.5.21"
 	kotlin("jvm") version "1.9.23"
 	kotlin("plugin.spring") version "1.9.23"
 }
@@ -27,6 +28,7 @@ dependencies {
 	implementation("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
+	runtimeOnly("org.postgresql:postgresql")
 }
 
 tasks.withType<KotlinCompile> {
